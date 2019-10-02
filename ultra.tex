@@ -607,6 +607,52 @@ avoided that danger.
     so by Upward Closure, $X_{AC}\in\mathscr U$, that is, $A>_{E}C$.
 \end{proof}
 
+    \subsection{Comparing specialized intelligence}
+
+    Definition \ref{MainDefinition} is flexible in that it
+    allows one to choose which environments to consider.
+    By considering specialized environments, one could obtain
+    comparisons of specialized intelligence. For example,
+    suppose $P_1,P_2,\ldots$ is an exhaustive list of
+    chess-playing computer programs. For each $i$, let $e_{2i}$
+    (resp.\ $e_{2i+1}$)
+    be the environment: ``play the white (resp.\ black) pieces
+    in a game of chess against $P_i$, receiving $+1$ reward if
+    on the move (if any) in which you win the game, $-1$ reward
+    on the move (if any) in which you lose the game, and $0$
+    reward on all other moves''. (We can extend chess into an
+    infinite game by obliging the players to continue making
+    dummy moves forever after the usual gameplay ends.)
+    For each ultrafilter, Definition \ref{MainDefinition} yields
+    an abstract method of comparing intelligence at the game of
+    chess.
+
+    A couple nuances about this paper will be illuminated by contrasting
+    the above-mentioned comparison method with practical chess
+    rating systems such as Elo ratings. Rating systems such as Elo
+    cast chess players as agents who can improve (or get worse)
+    from game to game. By contrast, the agents of
+    Definition \ref{EnvironmentAndAgent} are fixed, and do not
+    change from one environment to the next. This illustrates that
+    Definition \ref{MainDefinition} is not really appropriate for
+    the intelligence of human beings; it is more appropriate
+    for the intelligence of computer programs, and more specifically,
+    for computer programs just-out-of-the-box.
+
+    The reason we care about Definition \ref{MainDefinition} is
+    because it is simple enough for the possibility of
+    discovering nontrivial, non-contrived structural properties.
+    Something like Elo rating is infinitely more practical, but
+    we doubt that it is possible to prove any nontrivial,
+    non-contrived structural properties about intelligence as
+    reflected through Elo ratings. Indeed, it is partly because
+    our abstract definition treats agents as fixed and unchanging
+    that structural properties become obtainable. A chess-player's
+    Elo rating at any given time depends not only on the outcomes
+    that player has achieved, but also on the order of those outcomes,
+    and on the orders of the outcomes achieved by the opponents
+    at each play.
+
 
 
 \section{Structural properties of intelligence}
