@@ -18,7 +18,7 @@
 \author{\name Samuel Allen Alexander \email samuelallenalexander@gmail.com}
 
 \title{Intelligence via ultrafilter: structural properties of some intelligence
-comparators of Legg-Hutter agents}
+comparators of deterministic Legg-Hutter agents}
 
 \begin{document}
 
@@ -34,7 +34,7 @@ comparators of Legg-Hutter agents}
     In this paper, we consider a related question: rather than measure
     numeric intelligence of one Legg-Hutter agent, how can we compare the
     relative intelligence
-    of two Legg-Hutter agents? We propose an elegant answer based on
+    of two deterministic Legg-Hutter agents? We propose an elegant answer based on
     the following insight:
     we can view Legg-Hutter agents as candidates in an election, whose voters are
     environments, letting each environment vote (via its rewards) which
@@ -55,23 +55,23 @@ of \emph{general reinforcement learning}, but with a more universal
 point of view.}
 (formalized
 below).
-We will refer to these agents as \emph{Legg-Hutter agents},
-or as \emph{LH agents}, to distinguish them
-from various other agents in the AGI literature.
-LH agents' intelligence can be measured in
+We will refer to such an agent as a \emph{deterministic Legg-Hutter agent},
+or \emph{DLHA} for short, to distinguish it from various other agents
+in the AGI literature.
+DLHAs' intelligence can be measured in
 various ways using real numbers (for example, by
 means of infinite series involving Kolmogorov complexities).
 
-Aside from quantifying the intelligence of individual LH agents, this field
+Aside from quantifying the intelligence of individual DLHAs, this field
 of research has the potential to shed light on (at least certain aspects of)
 intelligence itself,
-abstracted over many LH agents.
+abstracted over many DLHAs.
 To that end, we intend to present a notion of the comparative
-intelligence of LH agents, which notion exhibits
+intelligence of DLHAs, which notion exhibits
 \emph{structural properties}. What we mean by
 a ``structural property'' is roughly the following: if one knows something about the
-intelligence of an LH agent $A$, a ``structural property'' is a theorem which allows one
-to infer something about the intelligence of some LH agent $A'$ which is a variation of
+intelligence of an agent $A$, a ``structural property'' is a theorem which allows one
+to infer something about the intelligence of some agent $A'$ which is a variation of
 $A$ in some sense.
 
 Here is an example to make the notion of a ``structural property'' more
@@ -83,11 +83,11 @@ $C$ obtained from $A$ and $B$ should be more intelligent than the team $C'$
 obtained from $A'$ and $B'$. This property, ``higher-intelligence team-members
 make higher-intelligence teams,'' if it held, would be an example of a structural property
 of intelligence. Later in this paper, we will explore this property for
-two specific notions of teamwork.
+two specific notions of DLHA teamwork.
 
 Rather than directly compute a real number intelligence measure for any
-particular LH agent, we will instead focus on the simpler problem of
-how to determine whether one LH agent is more intelligent
+particular DLHA, we will instead focus on the simpler problem of
+how to determine whether one DLHA is more intelligent
 than another\footnote{In more practical, less universal contexts, much work has
 been done on comparing agents, see \cite{balduzzi} (section 1) for a collection
 of references. Many practical methods for comparing agents turn out to be non-transitive,
@@ -112,7 +112,7 @@ but the abstract method we introduce is transitive (Lemma \ref{transitivityLemma
 
 We will introduce an abstract intelligence comparison
 based on the following insight:
-when considering whether agent $A$ is more intelligent than agent $B$,
+when considering whether DLHA $A$ is more intelligent than DLHA $B$,
 we can imagine that different environments are \emph{voters} voting in an election with
 three candidates. Those three candidates are: ``$A$ is more intelligent'',
 ``$B$ is more intelligent'', and ``$A$ and $B$ are equally intelligent''.
@@ -138,7 +138,8 @@ which \emph{does} admit non-dictatorial solutions.
 
 \section{Preliminaries}
 
-We will begin with a definition of agent and environment.
+We will begin with a definition of deterministic Legg-Hutter agent and of
+deterministic environment.
 We envision an agent being placed in an environment, where the agent
 receives an initial numerical reward, receives an initial observation, takes an initial
 action, receives a numerical reward for that action, receives an observation of how the
@@ -146,7 +147,8 @@ environment has changed, takes a second action, and so on \emph{ad infinitum}.
 This high-level vision basically agrees with \citet{hutter2007}
 and other authors,
 except that we require both agent and environment to
-be deterministic, whereas some authors allow an element of randomness.
+be deterministic, whereas Legg and Hutter allowed both agent and environment to have
+an element of randomness.
 See \citet{hutter2007} for a discussion of how these agents are related
 to real-world intelligent machines.
 % At first glance this vision might seem quite removed from real-world
@@ -175,9 +177,9 @@ the universe of environments, the more structural properties will result. We pre
 to initially lay the foundations as general as possible, and only specialize as
 needed.},
 we employ (in its debut appearance) a more
-abstract approach: we will first define what we call a pre-environment,
-with no such constraints, and then we will define an environment to be
-a pre-environment whose reward sequences (for every arbitrary agent) converge.
+abstract approach: we will first define what we call a deterministic pre-environment,
+with no such constraints, and then we will define a deterministic environment to be
+a deterministic pre-environment whose reward sequences (for every arbitrary DLHA) converge.
 
 
 \begin{definition}
@@ -185,18 +187,19 @@ a pre-environment whose reward sequences (for every arbitrary agent) converge.
     (Environment and Agent)
     \begin{enumerate}
         \item
-        A \emph{pre-environment} is a function $e$ which takes as input a finite
+        A \emph{deterministic pre-environment} is a function $e$ which takes as input a finite
         (possibly empty) sequence
         $a_1,\ldots,a_n$ of
         natural numbers, called \emph{actions}. It outputs a pair 
         $e(a_1,\ldots,a_n)=(r,o)$, where $r\in\mathbb R$ is called a \emph{reward}
         and $o\in\mathbb N$ is called an \emph{observation}.
         \item
-        An \emph{agent} is a function $A$ which takes as input a finite sequence
+        A \emph{deterministic Legg-Hutter agent} (or \emph{DLHA}) is
+        a function $A$ which takes as input a finite sequence
         $r_1,o_1,\ldots,r_n,o_n$ of reward-observation pairs, and outputs an action
         $A(r_1,o_1,\ldots,r_n,o_n)$.
         \item
-        If $A$ is an agent and $e$ is a pre-environment,
+        If $A$ is a DLHA and $e$ is a deterministic pre-environment,
         the \emph{reward-observation-action sequence
         determined by letting $A$ play in $e$} is the infinite sequence
         $r_1,o_1,a_1,r_2,o_2,a_2,\ldots$ defined inductively as follows:
@@ -221,42 +224,48 @@ a pre-environment whose reward sequences (for every arbitrary agent) converge.
             to be $r_{i+1},o_{i+1}=e(a_1,\ldots,a_i)$.
         \end{itemize}
         \item
-        A pre-environment $e$ is an \emph{environment} if,
-        for every agent $A$, the \emph{total reward} $r_1+r_2+\cdots$
+        A deterministic pre-environment $e$ is a \emph{deterministic environment} if,
+        for every DLHA $A$, the \emph{total reward} $r_1+r_2+\cdots$
         which \emph{$A$ achieves
         when $A$ plays in $e$}, converges.
         \item
-        If $A$ and $B$ are agents and $e$ is an environment, we say $A$ \emph{outperforms}
+        If $A$ and $B$ are DLHAs and $e$ is a deterministic environment, we
+        say $A$ \emph{outperforms}
         $B$ on $e$ if the total reward which $A$ achieves when $A$ plays in $e$, is larger than
-        the total reward which $B$ achieves when $B$ plays in $e$. We define what it means for
-        $A$ to \emph{underperform} $B$ on $e$, or for $A$ and $B$ to \emph{perform equally well}
+        the total reward which $B$ achieves when $B$ plays in $e$.
+        We define what it means for
+        $A$ to \emph{underperform} $B$ on $e$, or for $A$ and $B$
+        to \emph{perform equally well}
         on $e$, in similar ways.
     \end{enumerate}
 \end{definition}
 
 \begin{example}
     \begin{itemize}
-        \item The function $A(r_1,o_1,\ldots,r_i,o_i)=0$ is a trivial agent which
+        \item The function $A(r_1,o_1,\ldots,r_i,o_i)=0$ is a trivial DLHA which
         totally ignores the environment and blindly performs the same action
         over and over.
-        \item The function $e(a_1,\ldots,a_i)=(1,0)$ is a trivial pre-environment
-        which ignores an agent's actions, instead always blindly rewarding the agent
+        \item The function $e(a_1,\ldots,a_i)=(1,0)$ is a trivial deterministic pre-environment
+        which ignores a DHLA's actions, instead always blindly rewarding the DHLA
         with a reward of $r=1$, and never allowing any new observations. This
-        pre-environment might be thought of as a sensory-deprivational paradise
-        where agents receive constant injections of reward from an immutable void.
-        This pre-environment is \emph{not} an environment, because the total reward
-        it grants to any agent diverges to $+\infty$.
-        \item The function $e(a_1,\ldots,a_i)=(0,0)$ is a pre-environment similar to
-        the previous one, except that it never grants agents any reward. It is an
-        environment because the total reward it grants any agent converges (to $0$).
+        deterministic pre-environment might be thought of as a sensory-deprivational paradise
+        where DHLAs receive constant injections of reward from an immutable void.
+        This deterministic pre-environment
+        is \emph{not} a deterministic environment, because the total reward
+        it grants to any DLHA diverges to $+\infty$.
+        \item The function $e(a_1,\ldots,a_i)=(0,0)$ is a deterministic
+        pre-environment similar to
+        the previous one, except that it never grants DLHAs any reward. It is a
+        deterministic environment because the total reward it grants
+        any DLHA converges (to $0$).
         \item For a nontrivial example, choose a single-player video-game $V$ and 
-        consider an environment $e(a_1,\ldots,a_i)=(r_{i+1},o_{i+1})$
+        consider a function $e(a_1,\ldots,a_i)=(r_{i+1},o_{i+1})$
         where $o_{i+1}$ encodes the image displayed on screen
         by $V$ after the player presses buttons encoded by $a_1,\ldots,a_i$.
         Assuming $V$ displays a numerical score on the screen,
         we can take $r_{i+1}$ to be the currently displayed score minus the score which was
         displayed in $o_i$ (or minus $0$
-        if $i=0$). This function $e$ is a pre-environment. There are various
+        if $i=0$). This function $e$ is a deterministic pre-environment. There are various
         conditions on $V$ which would suffice to make $e$ an environment. For example,
         if $V$ cannot be played forever (so the score eventually always freezes);
         or if scores in $V$ never decrease, and have some limiting max score;
@@ -265,9 +274,10 @@ a pre-environment whose reward sequences (for every arbitrary agent) converge.
 \end{example}
 
 In order to arrive at an abstract method of comparing the intelligence of different
-agents, we will consider environments to be voters who vote in an election.
+DLHAs, we will consider deterministic environments to be voters who vote in an election.
 The question is how to use these votes to decide the election.
-Since there are infinitely many environments, that means there are infinitely many voters,
+Since there are infinitely many deterministic environments, that means there are
+infinitely many voters,
 which scenario is thoroughly investigated by \citet{kirman}.
 For the infinite voter case, Kirman and Sondermann showed that
 reasonable solutions are intimately
@@ -333,16 +343,18 @@ intuitions can be reconciled in a non-degenerate way.
 
 \section{An abstract intelligence comparator}
 
-We will arrive at an abstract method of comparing agents' intelligence by means of
+We will arrive at an abstract method of comparing DLHAs' intelligence by means of
 an imaginary election. The method we arrive at will not itself directly involve elections,
 so in motivating it, we will intentionally
 speak about elections in less than full formality. For full formality, see \citet{kirman}.
 
 We would like to answer the question,
 ``who is more intelligent, $A$ or $B$?'', by letting different
-environments vote. In the election, there are three candidates: ``$A$ is more intelligent'',
+deterministic environments vote. In the election, there are three
+candidates: ``$A$ is more intelligent'',
 ``$B$ is more intelligent'', and ``$A$ and $B$ are equally intelligent''.
-An environment $e$ is considered to rank these three candidates, from most to least
+A deterministic environment $e$ is considered to rank these three candidates,
+from most to least
 preferable, as follows:
 \begin{enumerate}
     \item
@@ -362,8 +374,8 @@ preferable, as follows:
     followed by ``$B$ is more intelligent''.
 \end{enumerate}
 (The order of the last two preferences in the latter case is arbitrary.
-It would be more natural to simply let an environment vote on a single winner,
-but we make the environments rank the three candidates because that is the form
+It would be more natural to simply let $e$ vote on a single winner,
+but we make $e$ rank the three candidates because that is the form
 of election which
 Kirman and Sondermann
 considered.)
@@ -376,16 +388,17 @@ A social welfare function is a \emph{dictatorship} if there is a particular vote
 always equals the group-preference given by the social welfare function.
 Using a dictatorship to settle the election in
 the above paragraph would amount to defining relative intelligence entirely by performance
-in one specific fixed environment, which would clearly be undesirable\footnote{For example,
+in one specific fixed deterministic environment,
+which would clearly be undesirable\footnote{For example,
 suppose relative intelligence was completely determined by performance
-in one environment $e$. Let $A$ be a very intelligent agent. Suppose the
+in one deterministic environment $e$. Let $A$ be a very intelligent DLHA. Suppose the
 reward-observation-action sequence determined by letting $A$ play on $e$
 is $r^0_1,o^0_1,a^0_1,\ldots,r^0_i,o^0_i,a^0_i,\ldots$.
-We can consider a new agent $A'$ defined by $A'(r_1,o_1,\ldots,r_i,o_i)=a^0_i$.
-In other words, $A'$ is the agent which completely ignores its environment
+We can consider a new DLHA $A'$ defined by $A'(r_1,o_1,\ldots,r_i,o_i)=a^0_i$.
+In other words, $A'$ is the DLHA which completely ignores everything
 and instead blindly regurgitates the actions $A$ takes on $e$. Then $A'$ should
-presumably not be very intelligent, since $A'$ never even pays attention to its
-environment, and yet, $A'$ performs exactly as well as $A$ on the particular environment
+presumably not be very intelligent, since $A'$ never even pays attention to anything,
+and yet, $A'$ performs exactly as well as $A$ on
 $e$ (by construction), and so, by choice of $e$, $A'$ would be just as intelligent as $A$.
 This would clearly be absurd.}.
 
