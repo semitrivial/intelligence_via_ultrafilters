@@ -32,10 +32,11 @@ comparators of Legg-Hutter agents}
     principle that a more intelligent agent should gain higher rewards
     from environments in some aggregate sense.
     In this paper, we consider a related question: rather than measure
-    numeric intelligence of one agent, how can we compare the relative intelligence
-    of two agents? We propose an elegant answer based on
+    numeric intelligence of one Legg-Hutter agent, how can we compare the
+    relative intelligence
+    of two Legg-Hutter agents? We propose an elegant answer based on
     the following insight:
-    we can view agents as candidates in an election, whose voters are
+    we can view Legg-Hutter agents as candidates in an election, whose voters are
     environments, letting each environment vote (via its rewards) which
     agent (if either) is more intelligent. This leads to an abstract
     family of comparators simple enough that we can prove
@@ -53,18 +54,24 @@ rewards from that environment\footnote{Essentially, the agents and environments
 of \emph{general reinforcement learning}, but with a more universal
 point of view.}
 (formalized
-below). These agents' intelligence is measured in
+below).
+We will refer to these agents as \emph{Legg-Hutter agents},
+or as \emph{LH agents}, to distinguish them
+from various other agents in the AGI literature.
+LH agents' intelligence can be measured in
 various ways using real numbers (for example, by
 means of infinite series involving Kolmogorov complexities).
 
-Aside from quantifying the intelligence of individual agents, this field
-of research has the potential to shed light on intelligence itself,
-abstracted over many agents.
-To that end, we intend to present a few
-\emph{structural properties} of intelligence. What do I mean by ``structural
-properties''? Roughly speaking, I mean the following: if I know something about the
-intelligence of an agent $A$, a ``structural property'' is a theorem which allows me
-to infer something about the intelligence of some agent $A'$ which is a variation of
+Aside from quantifying the intelligence of individual LH agents, this field
+of research has the potential to shed light on (at least certain aspects of)
+intelligence itself,
+abstracted over many LH agents.
+To that end, we intend to present a notion of the comparative
+intelligence of LH agents, which notion exhibits
+\emph{structural properties}. What we mean by
+a ``structural property'' is roughly the following: if one knows something about the
+intelligence of an LH agent $A$, a ``structural property'' is a theorem which allows one
+to infer something about the intelligence of some LH agent $A'$ which is a variation of
 $A$ in some sense.
 
 Here is an example to make the notion of a ``structural property'' more
@@ -79,9 +86,9 @@ of intelligence. Later in this paper, we will explore this property for
 two specific notions of teamwork.
 
 Rather than directly compute a real number intelligence measure for any
-particular agent, we will instead focus on the simpler problem of
-how to determine whether one agent is more intelligent
-than another agent\footnote{In more practical, less universal contexts, much work has
+particular LH agent, we will instead focus on the simpler problem of
+how to determine whether one LH agent is more intelligent
+than another\footnote{In more practical, less universal contexts, much work has
 been done on comparing agents, see \cite{balduzzi} (section 1) for a collection
 of references. Many practical methods for comparing agents turn out to be non-transitive,
 but the abstract method we introduce is transitive (Lemma \ref{transitivityLemma}).}.
@@ -103,7 +110,7 @@ but the abstract method we introduce is transitive (Lemma \ref{transitivityLemma
 % tell us anything (at least so far) more than just that $A$ is more intelligent than $B$.
 
 
-We will introduce an abstract intelligence measure
+We will introduce an abstract intelligence comparison
 based on the following insight:
 when considering whether agent $A$ is more intelligent than agent $B$,
 we can imagine that different environments are \emph{voters} voting in an election with
@@ -137,17 +144,20 @@ receives an initial numerical reward, receives an initial observation, takes an 
 action, receives a numerical reward for that action, receives an observation of how the
 environment has changed, takes a second action, and so on \emph{ad infinitum}.
 This high-level vision basically agrees with \citet{hutter2007}
-and other authors\footnote{For simplicity, we require both agent and environment to
-be deterministic, whereas some authors allow an element of randomness.}.
-At first glance this vision might seem quite removed from real-world
-agents, but the abstract numbers which we refer to as ``rewards'' can
-stand in for any number of realistic quantities such as: amounts of gold
-extracted from a mine; amounts of dopamine released by a brain; amounts of positive
-ratings on a website; etc. Similarly, a single numerical ``observation'' can
-encode any sort of real-world observation we can think of (just as any computer file
-is really just a long string of binary, i.e., a single number). So this field
-really is potentially relevant to real-world agents, and by abstracting technical
-details away, we can hope to make theoretical progress without being so distracted.
+and other authors,
+except that we require both agent and environment to
+be deterministic, whereas some authors allow an element of randomness.
+See \citet{hutter2007} for a discussion of how these agents are related
+to real-world intelligent machines.
+% At first glance this vision might seem quite removed from real-world
+% agents, but the abstract numbers which we refer to as ``rewards'' can
+% stand in for any number of realistic quantities such as: amounts of gold
+% extracted from a mine; amounts of dopamine released by a brain; amounts of positive
+% ratings on a website; etc. Similarly, a single numerical ``observation'' can
+% encode any sort of real-world observation we can think of (just as any computer file
+% is really just a long string of binary, i.e., a single number). So this field
+% really is potentially relevant to real-world agents, and by abstracting technical
+% details away, we can hope to make theoretical progress without being so distracted.
 
 To simplify the mathematics\footnote{To be clear, the results in this paper
 could be generalized so as to make this simplification unnecessary.
