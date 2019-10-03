@@ -420,8 +420,8 @@ The following theorem is an immediate corollary of \citet{kirman}:
 \begin{theorem}
 \label{shoulderofgiants}
     For any countably infinite
-    sequence $\vec{e}=(e_0,e_1,\ldots)$ of environments, suppose the
-    environments of $\vec{e}$
+    sequence $\vec{e}=(e_0,e_1,\ldots)$ of deterministic environments, suppose the
+    members of $\vec{e}$
     shall rank the following three candidates: ``$A$ is more intelligent'',
     ``$B$ is more intelligent'', and ``$A$ and $B$ are equally intelligent''.
     Let $\Sigma$ be the corresponding set of social welfare functions satisfying
@@ -430,7 +430,7 @@ The following theorem is an immediate corollary of \citet{kirman}:
         \item
         For every social welfare function $\sigma\in\Sigma$, there is exactly one
         ultrafilter $\mathscr U_\sigma$ with the following property:
-        Any way the environments rank the three candidates, for every two candidates
+        Any way $e_0,e_1,\ldots$ rank the three candidates, for every two candidates
         $x$ and $y$,
         if
         \[
@@ -462,15 +462,15 @@ comparators.
 \begin{definition}
     By an \emph{electorate}, we mean a
     pair $E=(\vec{e}, \mathscr U)$ where
-    $\vec{e}=(e_0,e_1,\ldots)$ is any countably infinite sequence of environments
+    $\vec{e}=(e_0,e_1,\ldots)$ is any countably infinite sequence of deterministic environments
     and $\mathscr U$ is an ultrafilter.
 \end{definition}
 
 \begin{definition}
 \label{MainDefinition}
     For every electorate $E=(\vec{e},\mathscr U)$,
-    we define relations $>_{E}$, $<_{E}$ and $=_{E}$ on agents as follows.
-    Let $A$ and $B$ be any two agents.
+    we define relations $>_{E}$, $<_{E}$ and $=_{E}$ on DLHAs as follows.
+    Let $A$ and $B$ be any two DLHAs.
     \begin{enumerate}
         \item
         If
@@ -497,13 +497,13 @@ comparators.
 \end{definition}
 
 If $\mathscr U$ is non-free, then Definition \ref{MainDefinition} is trivial:
-it prescribes that we compare intelligence of agents by comparing their
-performance in one fixed environment (because the corresponding social welfare
+it prescribes that we compare intelligence of DLHAs by comparing their
+performance in one fixed deterministic environment (because the corresponding social welfare
 function is a dictatorship). We are mainly interested in the case where $\mathscr U$
 is free\footnote{In particular, the strategy of this paper would break
-down if the universe of environments were restricted to a finite set of environments.}.
+down if the universe of deterministic environments were restricted to a finite set.}.
 
-Note that Definition \ref{MainDefinition} already compares all possible agents.
+Note that Definition \ref{MainDefinition} already compares all possible DLHAs.
 Thus we avoid a common intelligence comparison problem, wherein one compares some
 limited set of agents, but then the addition of another agent changes the
 intelligence order of the original agents.
@@ -512,22 +512,26 @@ An important difference between our approach and that of \citet{hutter2007}
 is that when comparing the relative intelligence of two agents, we only concern ourselves
 with the sets of environments where each agent outperforms the other, and we do not
 concern ourselves with the numerical difference of the two agents' performance in any
-environment. Thus, to us, if agent $A$ gains $10000$ more reward than agent $B$ on some
-environment, that only helps $A$ the same amount as if $A$ gained $0.00001$ more reward
+environment. Thus, to us, if DLHA $A$ gains $10000$ more reward than DLHA $B$ on some
+deterministic environment, that only helps $A$ the same amount as
+if $A$ gained $0.00001$ more reward
 than $B$ on that environment.
 This is similar to how Elo ratings are based only on final outcomes (win, loss, draw),
 ignoring any notion of the magnitude of a win or loss.
 We would defend this choice by pointing out that for any
-particular environment $e$, there is an equivalent environment $e'$ which is identical to
+particular deterministic environment $e$, there is an
+equivalent deterministic environment $e'$ which is identical to
 $e$ in every way except that its rewards are all multiplied by $10000$, and there is also
-an equivalent environment $e''$ which is identical to $e$ in every way except that its
+an equivalent deterministic environment $e''$ which is
+identical to $e$ in every way except that its
 rewards are all multiplied by $0.00001$.
 
 Note that we could have stated Definition \ref{MainDefinition} without the
-precise structure of agents and environments from Definition \ref{EnvironmentAndAgent}.
+precise structure of Definition \ref{EnvironmentAndAgent}.
 All that is needed to state Definition \ref{MainDefinition} is that agents
 outperform each other on environments, regardless of what exactly that actually means.
-However, the precise structure of agents and environments becomes important when one
+However, the precise structure of DLHAs and deterministic environments becomes
+important when one
 wants to actually obtain nontrivial \emph{structural properties} about the resulting
 comparators.
 
