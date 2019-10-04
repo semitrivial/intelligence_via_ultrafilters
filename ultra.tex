@@ -537,7 +537,7 @@ comparators.
 
 \begin{lemma}
 \label{firsteasylemma}
-    For every electorate $E=(\vec{e},\mathscr U)$ and agents $A$ and $B$, exactly one of the following is true:
+    For every electorate $E=(\vec{e},\mathscr U)$ and DLHAs $A$ and $B$, exactly one of the following is true:
     \begin{enumerate}
         \item $A>_{E}B$.
         \item $A<_{E}B$.
@@ -575,7 +575,7 @@ comparators.
 \end{proof}
 
 \begin{lemma}
-    Let $E=(\vec{e},\mathscr U)$ be an electorate and let $A$ and $B$ be agents.
+    Let $E=(\vec{e},\mathscr U)$ be an electorate and let $A$ and $B$ be DLHAs.
     \begin{enumerate}
         \item The following are equivalent: $A=_{E}B$, $B=_{E}A$.
         \item The following are equivalent: $A>_{E}B$, $B<_{E}A$.
@@ -587,7 +587,7 @@ Straightforward.
 \end{proof}
 
 \begin{lemma}
-    For every electorate $E=(\vec{e},\mathscr U)$ and agent $A$,
+    For every electorate $E=(\vec{e},\mathscr U)$ and DLHA $A$,
     $A=_{E}A$, $A\not>_{E}A$, and $A\not<_{E}A$.
 \end{lemma}
 
@@ -609,7 +609,7 @@ avoided that danger.
 \begin{lemma}
 \label{transitivityLemma}
     (Transitivity)
-    Let $E=(\vec{e},\mathscr U)$ be an electorate and let $A,B,C$ be agents.
+    Let $E=(\vec{e},\mathscr U)$ be an electorate and let $A,B,C$ be DLHAs.
     \begin{enumerate}
         \item If $A>_{E}B$ and $B>_{E}C$, then $A>_{E}C$.
         \item If $A<_{E}B$ and $B<_{E}C$, then $A<_{E}C$.
@@ -638,27 +638,27 @@ avoided that danger.
     \subsection{Comparing specialized intelligence}
 
     Definition \ref{MainDefinition} is flexible in that it
-    allows one to choose which environments to consider.
+    allows one to choose which deterministic environments to consider.
     By considering specialized environments, one could obtain
     comparisons of specialized intelligence. For example,
-    suppose $P_1,P_2,\ldots$ is an exhaustive list of
+    suppose $P_1,P_2,\ldots$ is a list of
     chess-playing computer programs. For each $i$, let $e_{2i}$
     (resp.\ $e_{2i+1}$)
     be the environment: ``play the white (resp.\ black) pieces
-    in a game of chess against $P_i$, receiving $+1$ reward if
-    on the move (if any) in which you win the game, $-1$ reward
-    on the move (if any) in which you lose the game, and $0$
+    in a game of chess against $P_i$, receiving $+1$ reward
+    on the move (if any) when you win, $-1$ reward
+    on the move (if any) in which you lose, and $0$
     reward on all other moves''. (We can extend chess into an
-    infinite game by obliging the players to continue making
-    dummy moves forever after the usual gameplay ends.)
+    infinite game by obliging the players to play
+    dummy moves forever after usual gameplay ends.)
     For each ultrafilter, Definition \ref{MainDefinition} yields
-    an abstract method of comparing intelligence at the game of
+    an abstract method of comparing performance at the game of
     chess.
 
     A couple nuances about this paper will be illuminated by contrasting
     the above-mentioned comparison method with practical chess
     rating systems such as Elo ratings. Rating systems such as Elo
-    cast chess players as agents who can improve (or get worse)
+    cast chess-players as agents who can improve (or get worse)
     from game to game. By contrast, the agents of
     Definition \ref{EnvironmentAndAgent} are fixed, and do not
     change from one environment to the next. This illustrates that
@@ -668,13 +668,13 @@ avoided that danger.
     for computer programs just-out-of-the-box.
 
     The reason we care about Definition \ref{MainDefinition} is
-    because it is simple enough for the possibility of
+    because it is simple enough to allow the possibility of
     discovering nontrivial, non-contrived structural properties.
     Something like Elo rating is infinitely more practical, but
     we doubt that it is possible to prove any nontrivial,
-    non-contrived structural properties about intelligence as
+    non-contrived structural properties about performance as
     reflected through Elo ratings. Indeed, it is partly because
-    our abstract definition treats agents as fixed and unchanging
+    our abstract definition treats agents as fixed and unchanging and deterministic
     that structural properties become obtainable. A chess-player's
     Elo rating at any given time depends not only on the outcomes
     that player has achieved, but also on the order of those outcomes,
@@ -683,11 +683,12 @@ avoided that danger.
 
 
 
-\section{Structural properties of intelligence}
+\section{Structural properties}
 
-In this section, we will exhibit some nontrivial structural properties of intelligence.
+In this section, we will exhibit some nontrivial structural properties of
+our intelligence comparators.
 The properties we have been able to come up with are humble and few,
-but we believe that in the context of universal intelligence, they are
+but we believe that in the context of Legg-Hutter-style intelligence measurement, they are
 first of their kind.
 
 \subsection{Properties of Teams}
@@ -697,8 +698,8 @@ follow shortly.
 
 \begin{definition}
 \label{flexiblespecialcase}
-For any agents $A$ and $B$, we define a new
-agent $A\oplus B$ such that for every observation-reward sequence
+For any DLHAs $A$ and $B$, we define a new
+DLHA $A\oplus B$ such that for every observation-reward sequence
 $(r_1,o_1,\ldots,r_n,o_n)$,
 \[
 (A\oplus B)(r_1,o_1,\ldots,r_n,o_n) =
@@ -710,7 +711,7 @@ $(r_1,o_1,\ldots,r_n,o_n)$,
 \end{definition}
 
 One can think of $A\oplus B$ as an agent who plans to act as $A$ or $B$,
-but has not yet decided which one. This agent will wait until seeing the first
+but has not yet decided which one. This DLHA will wait until seeing the first
 observation in the environment before committing to act as $A$ or committing
 to act as $B$. In an intuitive sense, $A\oplus B$ is a type of ``team'' formed
 by $A$ and $B$.
@@ -718,7 +719,7 @@ by $A$ and $B$.
 \begin{proposition}
 \label{EvenOddComboProposition}
 Let $E=(\vec{e},\mathscr U)$ be an electorate
-and let $A,A',B,B'$ be agents.
+and let $A,A',B,B'$ be DLHAs.
 If $A>_{E}A'$ and $B>_{E}B'$,
 then $A\oplus B >_{E} A'\oplus B'$.
 \end{proposition}
@@ -754,10 +755,10 @@ By Upward Closure, $X_2\in\mathscr U$, so $A\oplus B >_{E} A'\oplus B'$.
 Proposition \ref{EvenOddComboProposition} depends on the fact that we
 compare intelligence only by where an agent outperforms,
 without regard for the magnitude difference in rewards.
-Otherwise, we could imagine an agent $A$ who performs slightly worse than $A'$
+Otherwise, we could imagine a DLHA $A$ who performs slightly worse than $A'$
 on even-numbered environments but makes up for it by clobbering $A'$ on
 odd-numbered environments, making $A$ more intelligent than $A'$.
-And we could imagine an agent $B$ who performs slightly worse than $B'$ on
+And we could imagine a DLHA $B$ who performs slightly worse than $B'$ on
 odd-numbered environments but clobbers $B'$ on even-numbered environments.
 Then $A\oplus B$ would perform worse than $A'\oplus B'$ everywhere, despite
 each team-member being more intelligent than its counterpart.
@@ -766,8 +767,8 @@ The following definition generalizes Definition \ref{flexiblespecialcase}.
 
 \begin{definition}
 \label{flexiblecombo}
-    Let $X$ be any set of reward-observation sequences and let $A$ and $B$ be agents.
-    The \emph{team combination of $A$ and $B$ given by $X$} is the agent
+    Let $X$ be any set of reward-observation sequences and let $A$ and $B$ be DLHAs.
+    The \emph{team combination of $A$ and $B$ given by $X$} is the DLHA
     $A\oplus_X B$ defined as follows.
     Suppose $r_1,o_1,\ldots,r_n,o_n$ is any observation-reward sequence.
     If for all $m\leq n$, $A(r_1,o_1,\ldots,r_m,o_m)=B(r_1,o_1,\ldots,r_m,o_m)$,
@@ -786,10 +787,11 @@ The following definition generalizes Definition \ref{flexiblespecialcase}.
 
 In other words, $A\oplus_X B$ is the agent which has decided either to act as $A$,
 or to act as $B$, but refuses to commit to one or the other until it is forced to.
-In any particular environment, as long as the observations and rewards are such that
+In any particular deterministic environment, as long as the observations and
+rewards are such that
 $A$ and $B$ would act identically, then $A\oplus_X B$ acts in that way, without
 committing to either one. Only when the observations and rewards are such that $A$
-and $B$ would choose different actions, does $A\oplus_X B$ finally decide which agent
+and $B$ would choose different actions, does $A\oplus_X B$ finally decide which DLHA
 to follow in that environment, and it makes that decision based on whether or not
 $X$ contains the observation-reward sequence which caused $A$ and $B$ to disagree.
 Again, $A\oplus_X B$ is intuitively a type of ``team'' formed by $A$ and $B$.
@@ -800,7 +802,7 @@ is the same as $\oplus$ from Definition \ref{flexiblespecialcase}.
 
 \begin{proposition}
 \label{splittingproposition}
-    For every electorate $E=(\vec{e},\mathscr U)$, agents $A$ and $B$, and set $X$ of
+    For every electorate $E=(\vec{e},\mathscr U)$, DLHAs $A$ and $B$, and set $X$ of
     observation-reward sequences,
     $A\oplus_X B =_{E} A$ or $A\oplus_X B =_{E}B$.
 \end{proposition}
@@ -850,7 +852,7 @@ $A$.
     (Compare Proposition \ref{EvenOddComboProposition})
     Let $E=(\vec{e},\mathscr U)$ be an electorate,
     let $X$ be an observation-reward sequence set,
-    and let $A,A',B,B'$ be agents.
+    and let $A,A',B,B'$ be DLHAs.
     Assume the following:
     \begin{eqnarray*}
         A &{>_{E}}& A',\\
@@ -882,10 +884,10 @@ intelligence, of which our intelligence comparators are a rather monolithic appr
 \label{quittersSubSection}
 
 In this section, we will prove a couple of structural properties about
-agents who quit playing once they achieve a certain total reward. In order to
+DLHAs who quit playing once they achieve a certain total reward. In order to
 arrive at these results, some preliminary definitions are needed.
-First, we will formalize a notion of an agent skipping a turn and what
-it means for an environment to respect that.
+First, we will formalize a notion of a DLHA skipping a turn and what
+it means for a deterministic environment to respect that.
 
 \begin{definition}
     (Action-Skipping)
@@ -893,7 +895,7 @@ it means for an environment to respect that.
         \item
             By ``skip'', we mean the the natural number $0$ (considered as an action).
         \item
-            An environment $e$ is said to \emph{respect skipping} if
+            A deterministic environment $e$ is said to \emph{respect skipping} if
             for every action-sequence $a_1,\ldots,a_n$, if $a_n=\mbox{``skip''}$
             and $e(a_1,\ldots,a_n)=(r,o)$, then $r=0$.
             (Informally: $e$ always gives $0$ reward in response to a ``skip''
@@ -905,7 +907,7 @@ it means for an environment to respect that.
 \end{definition}
 
 The structural properties we are aiming for in this section also require a notion
-of environments having a limit on how big of a reward they can give at any one
+of deterministic environments having a limit on how big of a reward they can give at any one
 time (for simplicity we will make that limit be $1$, although this is
 not particularly important).
 
@@ -913,7 +915,7 @@ not particularly important).
     (Bounded rewards)
     \begin{enumerate}
         \item
-            An environment $e$ is said to have \emph{bounded rewards}
+            A deterministic environment $e$ is said to have \emph{bounded rewards}
             if for every action-sequence $a_1,\ldots,a_n$,
             if $e(a_1,\ldots,a_n)=(r,o)$, then $r\leq 1$.
         \item
@@ -923,8 +925,8 @@ not particularly important).
 \end{definition}
 
 \begin{definition}
-Suppose $A$ is an agent and $r$ is a real number.
-We define a new agent $A\mathord{\restriction}_r$ as follows.
+Suppose $A$ is a DLHA and $r$ is a real number.
+We define a new DLHA $A\mathord{\restriction}_r$ as follows.
 For every reward-observation sequence $r_1,o_1,\ldots,r_n,o_n$,
 \[
 A\mathord{\restriction}_r(r_1,o_1,\ldots,r_n,o_n)
@@ -946,7 +948,7 @@ and performs nothing but ``skip'' forever after.
 \label{quitterproposition}
 Let $E=(\vec{e},\mathscr U)$ be an electorate with bounded rewards, and assume
 $E$ respects skipping.
-Suppose $A$ and $B$ are agents with $A>_{E}B$. Let $r\in\mathbb R$.
+Suppose $A$ and $B$ are DLHAs with $A>_{E}B$. Let $r\in\mathbb R$.
 If $B\mathord{\restriction}_r=_{E}B$, then $A\mathord{\restriction}_{r+1}>_{E}B$.
 \end{proposition}
 
@@ -1001,7 +1003,7 @@ already beaten $B$ on the environment in
 question (with ``almost no environments'' being exceptions).
 
 \begin{definition}
-    An environment $e$ is \emph{merciful} if
+    A deterministic environment $e$ is \emph{merciful} if
     the rewards it outputs are never negative.
     An electorate $E=(\vec{e},\mathscr U)$ is \emph{merciful}
     if each $e_i$ is merciful.
@@ -1010,7 +1012,7 @@ question (with ``almost no environments'' being exceptions).
 \begin{proposition}
 \label{trivialquitterproposition}
     Let $E=(\vec{e},\mathscr U)$ be a merciful electorate that respects skipping.
-    For every agent $A$ and real number $r$, $A\not<_{E}A\mathord{\restriction}_r$.
+    For every DLHA $A$ and real number $r$, $A\not<_{E}A\mathord{\restriction}_r$.
 \end{proposition}
 
 \begin{proof}
@@ -1021,34 +1023,34 @@ question (with ``almost no environments'' being exceptions).
 
 
 The proof of Proposition \ref{trivialquitterproposition} would not go through if
-environments were not merciful.
+the deterministic environments were not merciful.
 This brings the following interesting fact to our attention:
-if environments are allowed to give out punishments,
-then the relative intelligence of two agents really ought to depend on
+if deterministic environments are allowed to give out punishments,
+then the relative intelligence of two DLHAs really ought to depend on
 context, namely, on how risk-averse we are.
-After all, if $A$ is an agent, then who
+After all, if $A$ is a DLHA, then who
 is more intelligent: $A$ or $A\mathord{\restriction}_1$?
 If it is better to safely achieve a total reward of at
 least $1$, at the price of forgoing higher rewards with a higher risk,
 then $A\mathord{\restriction}_1$
-should be more intelligent, because in some environments,
+should be more intelligent, because in some deterministic environments,
 $A$ could temporarily achieve rewards adding to $\geq 1$, but then later
-receive large punishments from the environment. On the other hand, if
+receive large punishments. On the other hand, if
 it is better to achieve highest-possible rewards, even at risk of being punished
-in some environments, we might prefer $A$, because there may be many environments
+in some environments, we might prefer $A$, because there may be many deterministic environments
 where $A\mathord{\restriction}_1$ will fall well short of $A$.
 
 
 \section{Open Questions about other intelligence proposals}
 
 Even if the reader completely disagrees that our proposal has anything to do with
-universal intelligence, nevertheless, the results we have obtained still serve as
-a useful source of open questions which can be asked about any other proposal for
-universal intelligence.
+intelligence, nevertheless, the results we have obtained still serve as
+a useful source of open questions which can be asked about other proposals for
+measuring the intelligence of Legg-Hutter-style agents.
 
 \subsection{Legg and Hutter universal intelligence}
 
-For every agent $A$, let $\varGamma(A)$ denote the universal intelligence of $A$
+For every agent $A$, let $\varGamma(A)$ denote the so-called universal intelligence of $A$
 as defined by \citet{hutter2007}.
 
 \begin{question}
@@ -1089,24 +1091,24 @@ as defined by \citet{hutter2007}.
 
 \subsection{Hern\'andez-Orallo and Dowe universal intelligence}
 
-Various proposals for universal intelligence are given by \citet{hernandez}.
+Various proposals for so-called universal intelligence are given by \citet{hernandez}.
 
 \begin{question}
     What are the answers to Questions \ref{FirstOpenQuestion}--\ref{LastOpenQuestion}
-    if $\varGamma$ denotes the various universal intelligence definitions
+    if $\varGamma$ denotes the various intelligence definitions
     given by \citet{hernandez}?
 \end{question}
 
 
 \subsection{Hibbard universal intelligence}
 
-Hibbard has proposed \citep{hibbard} a definition of universal intelligence
+Hibbard has proposed \citep{hibbard} a definition of so-called universal intelligence
 of quite a different flavor.
 
 \begin{question}
 \label{ReallyLastOpenquestion}
     What are the answers to Questions \ref{FirstOpenQuestion}--\ref{LastOpenQuestion}
-    if $\varGamma$ denotes the universal intelligence measure given by
+    if $\varGamma$ denotes the intelligence measure given by
     \citet{hibbard}?
 \end{question}
 
@@ -1114,40 +1116,44 @@ of quite a different flavor.
 
 Following \citet{hutter2007}, we considered an abstraction in
 which agents take actions within environments, based on the observations and
-rewards they receive from those environments. Various authors
+rewards they receive from those environments.
+(Unlike Legg and Hutter, we constrained both agent and environment to be
+deterministic.)
+Various authors
 \citep{hutter2007, hernandez, hibbard} have proposed
-ingenious means of quantifying the so-called \emph{universal intelligence}
-of these agents.
+ingenious means of quantifying the intelligence
+of such agents.
 Informally, the goal of such a measurement is that
 an agent with higher universal intelligence should realize larger rewards
 over the (infinite) space of environments, in some aggregate
 sense.
 
-We proposed a new approach to quantifying universal intelligence, a more
+We proposed a new approach to comparing the intelligence of
+deterministic Legg-Hutter agents (DLHAs), a more
 abstract approach which lends itself to proving certain structural properties
-about intelligence. Rather than measure the universal intelligence of an
-agent, we focused on a closely related problem: how to compare the relative
-universal intelligence of two agents. Our approach is based on the following
-insight: environments can be treated as voters in an election to determine
-which agent (if either) is more intelligent. Each environment votes for that
-agent which scores the highest reward in that environment (or votes that the
-two agents are equally intelligent, if both agents score equally in it).
+about intelligence. Rather than measure the universal intelligence of a
+DLHA, we focused on a closely related problem: how to compare the relative
+intelligence of two DLHAs. Our approach is based on the following
+insight: deterministic environments can be treated as voters in an election to determine
+which DLHA (if either) is more intelligent. Each environment votes for that
+DLHA which scores the highest reward in that environment (or votes that the
+two DLHAs are equally intelligent, if both DLHAs score equally in it).
 This realization provides an exciting bridge connecting the budding field of
-universal intelligence to
+Legg-Hutter-style intelligence to
 the mature field of election theory.
 In particular,
 \citet{kirman} have completely characterized
 reasonable solutions to the infinite-voter election problem in terms of \emph{ultrafilters},
 a device from mathematical logic. This led us to an elegant means
-of using ultrafilters to compare relative universal intelligence of agents.
+of using ultrafilters to compare intelligence of DLHAs.
 
 The intelligence comparators we arrived at are elegant enough that
-we were able to prove some structural properties about how certain agents'
-intelligence is related \emph{in general}. For example, if $A$ and $B$ are
-agents, more intelligent than agents $A'$ and $B'$ respectively, we proved
+we were able to prove some structural properties about how DLHAs'
+intelligences are related \emph{in general}. For example, if $A$ and $B$ are
+DLHAs, more intelligent than DLHAs $A'$ and $B'$ respectively, we proved
 (Proposition \ref{EvenOddComboProposition}) that
 $A\oplus B$ is more intelligent than $A'\oplus B'$, where $\oplus$ is an
-operator which takes two agents and outputs a new agent which can roughly
+operator which takes two DLHAs and outputs a new DLHA which can roughly
 be thought of as a ``team'' made up of $A$ and $B$
 (Definition \ref{flexiblespecialcase}).
 In short (although this is an oversimplification):
@@ -1156,11 +1162,10 @@ In short (although this is an oversimplification):
 Our comparators are purely theoretical and not useful
 for doing concrete computations. Nevertheless, the structural
 properties we are able to prove about these theoretical comparators
-are a useful source of open questions about other universal
+are a useful source of open questions about other Legg-Hutter-style
 intelligence approaches (Questions \ref{FirstOpenQuestion}--\ref{ReallyLastOpenquestion}).
-Our hope is that this will inspire more research on universal intelligence
-even among readers who disagree about our particular proposal
-for universal intelligence comparison.
+Our hope is that this will inspire more research on Legg-Hutter-style intelligence
+even among readers who disagree about our particular proposal.
 
 \section*{Acknowledgements}
 
