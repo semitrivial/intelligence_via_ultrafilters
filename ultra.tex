@@ -155,11 +155,19 @@ stand in for any number of realistic quantities such as: amounts of gold
 extracted from a mine; amounts of dopamine released by a brain; amounts of positive
 ratings on a website; etc. Similarly, a single numerical ``observation'' can
 encode any sort of real-world observation we can think of (just as any computer file
-is really just a long string of binary, i.e., a single number). So this field
-really is potentially relevant to real-world agents, and by abstracting technical
-details away, we can hope to make theoretical progress without being so distracted.
-See \citet{hutter2007} for further discussion of how these agents are related
-to real-world intelligent machines.
+is really just a long string of binary, i.e., a single number).
+So this model seems flexible enough to accomodate many, if not all, practical uses
+to which one would want to put a general-purpose AI.
+(For example, if we want the general-purpose AI to translate documents, we can concoct
+an environment which incentivizes that; if we want the general-purpose AI to analyze
+protein-folding, we can concoct an environment which incentivizes that; and so on.)
+In order to achieve good rewards across the universe of all environments,
+such an AI would need to have creativity (for those environments that reward creativity),
+pattern-matching skills (for those environments that reward pattern-matching),
+ability to adapt and learn on-the-fly (for those environments which do not explicitly
+advertise what things they reward), etc.
+See \citet{hutter2007} for further discussion of how this model relates
+to machine intelligence.
 % At first glance this vision might seem quite removed from real-world
 % agents, but the abstract numbers which we refer to as ``rewards'' can
 % stand in for any number of realistic quantities such as: amounts of gold
