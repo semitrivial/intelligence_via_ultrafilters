@@ -149,7 +149,16 @@ and other authors,
 except that we require both agent and environment to
 be deterministic, whereas Legg and Hutter allowed both agent and environment to have
 an element of randomness.
-See \citet{hutter2007} for a discussion of how these agents are related
+At first glance this vision might seem quite removed from real-world
+agents, but the abstract numbers which we refer to as ``rewards'' can
+stand in for any number of realistic quantities such as: amounts of gold
+extracted from a mine; amounts of dopamine released by a brain; amounts of positive
+ratings on a website; etc. Similarly, a single numerical ``observation'' can
+encode any sort of real-world observation we can think of (just as any computer file
+is really just a long string of binary, i.e., a single number). So this field
+really is potentially relevant to real-world agents, and by abstracting technical
+details away, we can hope to make theoretical progress without being so distracted.
+See \citet{hutter2007} for further discussion of how these agents are related
 to real-world intelligent machines.
 % At first glance this vision might seem quite removed from real-world
 % agents, but the abstract numbers which we refer to as ``rewards'' can
@@ -1046,7 +1055,7 @@ where $A\mathord{\restriction}_1$ will fall well short of $A$.
 
 In this section, we will attempt to anticipate objections to Definition \ref{MainDefinition}.
 
-\subsection{What does Definition \ref{MainDefinition} really have to do with intelligence?}
+\subsection{What does this definition really have to do with intelligence?}
 
 Definition \ref{MainDefinition} might seem suspect in the sense that it is not
 clear, out of context, what (if any) connection it has to things like knowledge,
