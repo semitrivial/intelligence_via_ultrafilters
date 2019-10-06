@@ -167,7 +167,8 @@ pattern-matching skills (for those environments that reward pattern-matching),
 ability to adapt and learn on-the-fly (for those environments which do not explicitly
 advertise what things they reward), etc.
 See \citet{hutter2007} for further discussion of how this model relates
-to machine intelligence.
+to machine intelligence (and for caveats about the agent-environment
+model).
 % At first glance this vision might seem quite removed from real-world
 % agents, but the abstract numbers which we refer to as ``rewards'' can
 % stand in for any number of realistic quantities such as: amounts of gold
@@ -354,7 +355,11 @@ Through this lens, the Maximality property seems obvious (when two candidates
 compete in an election, one of them must win), whereas the $\cap$-closure property
 seems implausible.
 \end{itemize}
-Theorem \ref{ultrafilterexistence} is profound because it says these two
+Theorem \ref{ultrafilterexistence} is
+profound\footnote{To give an idea of the extreme profoundness of
+Theorem \ref{ultrafilterexistence}: free ultrafilters are used in formalizations of
+Kurt G\"odel's ontological argument for the
+existence of God, see \citet{galvan}.} because it says these two
 intuitions can be reconciled in a non-degenerate way.
 
 
@@ -1137,7 +1142,7 @@ or else be so general as to work in spite of the specific choices Legg and Hutte
 This paper is concerned with pragmatic intelligence: intelligence,
 as we understand and measure it here, is appropriate for the situation where one
 is evaluating a general-purpose AI intended to be used in many different
-well-defined, rational, emotionless tasks.
+well-defined, rational, emotionless tasks. 
 
 Arguably, different types of intelligence were foreshadowed in
 \citet{philebus}, where Socrates debates about whether a good life comes
@@ -1147,6 +1152,35 @@ rather, rewards, which could be argued to be the same thing as pleasure.
 In doing so, we are not taking any sort of position that this is the correct
 way to approach intelligence in general: rather, that \emph{if} intelligence is
 approached thus, then our definition serves as a potential formalization.
+
+\subsection{Not all instances of intelligence are ordinarily comparable}
+
+For any particular electorate, Definition \ref{MainDefinition} makes all
+DLHAs comparable, but we should stress that if $E$ and $E'$ are distinct
+electorates, then $A>_EB$ does not generally have any bearing on whether
+or not $A>_{E'}B$. Thus, the fact that not all instances of intelligence
+are ordinarily comparable is actually evidence in \emph{favor} of the
+parametrized-family approach of this paper. Different electorates might
+represent different types of intelligence, and a particular DLHA might
+be very intelligent according to one electorate and less intelligent
+with respect to another.
+
+\subsection{What about scholars who do not consider intelligence amenable to definition?}
+
+We understand that some scholars consider intelligence to be immune to
+definition, end-of-story. At first glance this paper
+might seem like a declaration of war against those
+scholars. But in actuality, this paper \emph{reconciles} those
+scholars with scholars who think intelligence can be defined.
+Except for degenerate edge-cases, the intelligence comparators of
+Definition \ref{MainDefinition} depend on a \emph{free ultrafilter}.
+Mathematical logicians have formally proven that, although free ultrafilters
+exist, it is impossible to exhibit one. Thus in a real and
+formal sense we vindicate the non-definition scholars, while at the same
+time showing (by proving some structural properties) that, counter-intuitively,
+this extreme position does \emph{not} mean that all is lost.
+
+
 
 
 \section{Open Questions about other intelligence proposals}
