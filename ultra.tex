@@ -293,6 +293,38 @@ a deterministic pre-environment whose reward sequences (for every arbitrary DLHA
     \end{itemize}
 \end{example}
 
+One might be tempted to wonder whether it is possible to find one single, particularly
+clever deterministic environment such that each DLHA's intelligence can be defined
+simply as the total reward it earns in that environment. The following lemma will show
+that this is impossible: no single environment $e$ can, by itself, serve as a good
+measure of intelligence.
+
+\begin{lemma}
+\label{inadequacylemma}
+    (Inadequacy of any single deterministic environment)
+    Let $e$ be any deterministic environment.
+    For every DLHA $A$, there exists some DLHA $B$ such that $A$ and $B$ achieve
+    the same total reward when they play in $e$, and yet $B$'s output does not
+    depend on which rewards or observations are input into it---loosely speaking,
+    $B$ is blind.
+\end{lemma}
+
+\begin{proof}
+    Let $r^0_1,o^0_1,a^0_1,\ldots,r^0_i,o^0_i,a^0_i,\ldots$ be the
+    reward-observation-action sequence determined by letting $A$ play on $e$.
+    Define $B$ by $B(r_1,o_1,\ldots,r_i,o_i)=a^0_i$, note that
+    $B(r_1,o_1,\ldots,r_i,o_i)$ only depends on $i$. Informally speaking, $B$
+    completely ignores everything and instead blindly regurgitates the actions
+    which $A$ takes on $e$. By construction, $B$ outputs the exact same actions
+    as $A$ on the particular environment $e$, so $A$ and $B$ achieve the same
+    total reward when they play in $e$.
+\end{proof}
+
+Lemma \ref{inadequacylemma} shows that if intelligence were measured by performance
+on any single deterministic environment, then every DLHA would be exactly as intelligent
+as a DLHA that ignores the environment---a property which clearly should not hold of
+a reasonable intelligence measure.
+
 In order to arrive at an abstract method of comparing the intelligence of different
 DLHAs, we will consider deterministic environments to be voters who vote in an election.
 The question is how to use these votes to decide the election.
@@ -410,18 +442,7 @@ always equals the group-preference given by the social welfare function.
 Using a dictatorship to settle the election in
 the above paragraph would amount to defining relative intelligence entirely by performance
 in one specific fixed deterministic environment,
-which would clearly be undesirable\footnote{For example,
-suppose relative intelligence was completely determined by performance
-in one deterministic environment $e$. Let $A$ be a very intelligent DLHA. Suppose the
-reward-observation-action sequence determined by letting $A$ play on $e$
-is $r^0_1,o^0_1,a^0_1,\ldots,r^0_i,o^0_i,a^0_i,\ldots$.
-We can consider a new DLHA $A'$ defined by $A'(r_1,o_1,\ldots,r_i,o_i)=a^0_i$.
-In other words, $A'$ is the DLHA which completely ignores everything
-and instead blindly regurgitates the actions $A$ takes on $e$. Then $A'$ should
-presumably not be very intelligent, since $A'$ never even pays attention to anything,
-and yet, $A'$ performs exactly as well as $A$ on
-$e$ (by construction), and so, by choice of $e$, $A'$ would be just as intelligent as $A$.
-This would clearly be absurd.}.
+which is undesirable (by Lemma \ref{inadequacylemma}).
 
 Two other desirable properties of a social welfare function are:
 \begin{itemize}
