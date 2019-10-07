@@ -85,6 +85,13 @@ make higher-intelligence teams,'' if it held, would be an example of a structura
 of intelligence. Later in this paper, we will explore this property for
 two specific notions of DLHA teamwork.
 
+In the future, we hope that the investigation of structural properties of an
+algebraic nature will help to reveal more qualitative facts about intelligence.
+As a precedent, one of the structural properties we prove (Proposition
+\ref{trivialquitterproposition}) helped us realize that if environments can
+give negative rewards, then the relative intelligence of different DLHAs
+really ought to depend on how risk-averse we are; more on this below.
+
 Rather than directly compute a real number intelligence measure for any
 particular DLHA, we will instead focus on the simpler problem of
 how to determine whether one DLHA is more intelligent
@@ -188,7 +195,7 @@ In order to achieve good rewards across the universe of all environments,
 such an AI would need to have creativity (for those environments that reward creativity),
 pattern-matching skills (for those environments that reward pattern-matching),
 ability to adapt and learn on-the-fly (for those environments which do not explicitly
-advertise what things they reward), etc.
+advertise what things they reward, or whose goals change over time), etc.
 See \citet{hutter2007} for further discussion of how this model relates
 to machine intelligence (and for caveats about the agent-environment
 model).
@@ -1100,7 +1107,6 @@ question (with ``almost no environments'' being exceptions).
     on any $e_n$, and the proposition trivially follows.
 \end{proof}
 
-
 The proof of Proposition \ref{trivialquitterproposition} would not go through if
 the deterministic environments were not merciful.
 This brings the following interesting fact to our attention:
@@ -1118,6 +1124,11 @@ receive large punishments. On the other hand, if
 it is better to achieve highest-possible rewards, even at risk of being punished
 in some environments, we might prefer $A$, because there may be many deterministic environments
 where $A\mathord{\restriction}_1$ will fall well short of $A$.
+Risk-aversion is, itself, already a potentially multi-dimensional parameter, and we
+expect it is probably only one of many of the hidden parameters
+underlying intelligence. The choice of an ultrafilter in Definition \ref{MainDefinition}
+serves as a convenient catch-all parameter which, we think, might serve to wrap up all
+these different complicated parameters into one.
 
 
 \section{Anticipated objections}
