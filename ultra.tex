@@ -47,7 +47,7 @@ comparators of deterministic Legg-Hutter agents}
 \section{Introduction}
 
 Starting with the landmark paper of \citet{hutter2007}, various
-attempts \citep{hernandez, hibbard} have been
+attempts \citep{hernandez, hibbard, legg2013approximation} have been
 made to quantify the intelligence of an idealized intelligent agent, one which interacts
 with an arbitrary environment based on observations and
 rewards from that environment\footnote{Essentially, the agents and environments
@@ -350,6 +350,11 @@ measure of intelligence.
     total reward when they play in $e$.
 \end{proof}
 
+The proof of Lemma \ref{inadequacylemma} recalls the following words from
+\citet{sanghi2003computer}: ``...the reason that I.Q.\ test success can be
+automated with comparative ease is that administering an I.Q.\ test requires
+little intelligence---it requires comparatively little more than
+giving a list of questions with known answers.''
 Lemma \ref{inadequacylemma} shows that if intelligence were measured by performance
 on any single deterministic environment, then every DLHA would be exactly as intelligent
 as some DLHA that ignores the environment---a property which clearly should not hold of
@@ -1193,8 +1198,10 @@ The intelligence measure defined by Legg and Hutter is important because it show
 that it is in principle possible to formalize an abstract measurement of intelligence.
 There are some problems with the specific measure which Legg and Hutter used.
 Legg and Hutter acknowledge their measurement's dependence on a
-reference universal Turing machine, but that is not the only arbitrary choice involved.
-Much worse is the arbitrary choice of the infinite sequence which they use to ensure
+reference universal Turing machine; see
+\cite{leike2015bad} for discussion of why this is bad.
+But that is not the only arbitrary choice involved.
+Worse still is the arbitrary choice of the infinite sequence which they use to ensure
 convergence. Legg and Hutter weigh the contribution from an environment by $2^{-K}$ where
 $K$ is the environment's Kolmogorov complexity, but why not by $3^{-K}$ or $1.1^{-K}$?
 In terms of the present paper, we are skeptical that any nontrivial, non-contrived
@@ -1206,8 +1213,7 @@ or else be so general as to work in spite of the specific choices Legg and Hutte
 
 \subsection{What about emotions, emotional intelligence, irrational intelligence, etc?}
 
-This paper is concerned with pragmatic intelligence: intelligence,
-as we define and measure it here, is appropriate for the situation where one
+This paper is concerned with pragmatic intelligence, appropriate for the situation where one
 is evaluating a general-purpose utility-maximizing AI intended to be used in many different
 well-defined, rational, emotionless tasks. Our definition does not account for
 emotional feelings (if any) in the machine, nor for what the machine knows or believes
