@@ -1155,9 +1155,9 @@ to intelligence. First, that the agent-environment model
 intelligence; second, that Definition \ref{MainDefinition} is closely related
 to the problem of using Definition \ref{EnvironmentAndAgent} to compare intelligence.
 
-Legg and Hutter \citet{hutter2007} have done a fine job arguing for the
-close relationship between the agent-environment model and a type of intelligence;
-we would not wish to copy their paper here. We will add the following.
+\citet{hutter2007} have done a fine job arguing for the
+close relationship between the agent-environment model and a type of intelligence.
+We will add the following.
 Whatever intelligence is, it surely involves components such as creativity,
 pattern recognition, the ability to abstract and to extrapolate, etc.
 Whether or not a DLHA is capable of creativity and so on is beyond the scope of
@@ -1170,9 +1170,10 @@ practical intents and purposes. To quote Socrates:
 ``But, not possessing right judgment, you would not realize that you are
 enjoying yourself even while you do, and, being unable to calculate,
 you could not figure out any future pleasures for yourself''
-\citep{philebus}. Even Jesus of Nazareth speaks about the relationship
-to actions, saying: ``But wisdom is vindicated by her actions''
-(Matthew 11:19c).
+\citep{philebus}.
+% Even Jesus of Nazareth speaks about the relationship
+% to actions, saying: ``But wisdom is vindicated by her actions''
+% (Matthew 11:19c).
 
 It remains to show how Definition \ref{MainDefinition} is closely related to
 the problem of using Definition \ref{EnvironmentAndAgent} to compare intelligence.
@@ -1217,7 +1218,7 @@ all to shreds.
 Suppose Socrates were to ask us,
 ``What does it mean for $A$ to be more intelligent than $B$?''
 We might try to answer him with answers that appear, on the surface, to be closely
-related to intelligence. We strongly suspect he would tear such answers to shreds.
+related to intelligence. We suspect he would tear such answers to shreds.
 At the very least, Definition \ref{MainDefinition} would give Socrates a momentary
 pause.
 
@@ -1236,16 +1237,16 @@ convergence. The contribution from an environment with Kolmogorov complexity
 $K$ is weighed by $2^{-K}$, but why not $3^{-K}$ or $1.1^{-K}$?
 \item
 Legg and Hutter is biased toward agents who perform well in simple environments.
-For example, almost all environments have Kolmogorov complexity $>10$,
+For example, almost all environments have Kolmogorov complexity $>100$,
 but the Legg-Hutter intelligence of an agent is almost completely determined by its
-performance on environments with Kolmogorov complexity $\leq 10$.
+performance on environments with Kolmogorov complexity $\leq 100$.
 \end{enumerate}
 We are skeptical that any nontrivial, non-contrived
 \emph{structural properties} will be proven about Legg and Hutter's intelligence measure.
 Any such property would either have to fundamentally hinge on the specific
 choices that went into their definition (which we think unlikely),
 or else be so general as to work in spite of those specific choices
-(any such property would be surely be weak).
+(any such property would surely be weak).
 
 \subsection{What about emotions, emotional intelligence, irrational intelligence, etc?}
 
@@ -1254,18 +1255,9 @@ is evaluating a general-purpose utility-maximizing AI intended to be used in man
 well-defined, rational, emotionless tasks. Our definition does not account for
 emotional feelings (if any) in the machine, nor for what the machine knows or believes
 or understands (if anything), except indirectly to the extent that such emotions,
-knowledge, beliefs, or understanding helps the machine to better extract rewards
+knowledge, beliefs, or understanding help the machine to better extract rewards
 from reward-giving environments.
 It could potentially be dangerous to apply these definitions to human beings.
-
-Arguably, different types of intelligence were foreshadowed in
-\citet{philebus}, where Socrates debates about whether a good life comes
-from seeking pleasure or from seeking knowledge. In this paper, we approach
-intelligence solidly from the former direction: the AI seeks not pleasure, but
-rather, rewards, which could be argued to be the same thing as pleasure.
-In doing so, we are not taking any sort of position that this is the correct
-way to approach intelligence in general: rather, that \emph{if} intelligence is
-approached thus, then our definition serves as a potential formalization.
 
 \subsection{Not all instances of intelligence are ordinarily comparable}
 
@@ -1303,7 +1295,7 @@ all hypothetical environments, even though only finitely many environments can
 exist in reality (if our universe has only finitely many atoms and those
 atoms can only be arranged in finitely many ways). We acknowledge these shortcomings,
 but we defend them by comparing the situation to that of Turing machines. Turing
-machines, almost universally accepted as an acceptable model of computation, are
+machines, almost universally accepted as a model of computation, are
 equipped with infinite memory-tapes and allowed to run for eternity. And
 computability theorists routinely consider the entire infinite space of hypothetical
 Turing machines, even though a finite, discrete universe can only
@@ -1313,8 +1305,8 @@ computers have finite memories and therefore in a sense, every algorithm impleme
 on any real-world computer actually has runtime complexity $O(1)$. In these areas,
 infinity serves as an important simplifying assumption. Without such simplifying
 assumptions, computer science would be filled with arbitrary decisions about
-how many bits of memory the idealized computer actually has, how much
-time algorithms can run before the heat-death of the universe, etc. Considering
+how many bits of memory the idealized computer actually has, how long
+algorithms can run before the heat-death of the universe, etc. Considering
 how little we really know about these questions, and how rapidly our opinions about
 them change, we opine that the resulting science would be weakened.
 
@@ -1331,7 +1323,7 @@ We would like to propose a thought experiment. Suppose a passenger
 trapped in the sinking Titanic is a world-champion chess-player. Arguably,
 in the moments before the Titanic sinks, it is virtually impossible that this
 passenger will ever play another game of chess. Should that mean
-that her chess abilities are irrelevant to her intelligence? The answer could
+that their chess abilities are irrelevant to their intelligence? The answer could
 go either way, and it might indeed be interesting to study notions of intelligence
 in which the model takes into account what sort of scenarios the agent can
 possibly find itself in. In this paper, we take the tack that being a world-champion
@@ -1339,8 +1331,7 @@ chess-player \emph{is} relevant to one's intelligence, even when one is in a
 predicament that makes any future chess games impossible. (We should stress that
 this thought experiment only serves as an analogy, and this paper is not really
 appropriate for comparing the intelligence of human beings, but rather the
-intelligence of cold calculating machines. But a cold calculating machine on the
-Titanic makes a less compelling example.)
+intelligence of DLHAs.)
 
 \subsection{Shouldn't the model consider future discounting?}
 
@@ -1352,9 +1343,9 @@ arbitrary decisions of an infinite-dimensional nature, none of which (according 
 we know so far) have any intrinsic relationship to intelligence.
 Just as, in physics, an equation can be simplified by replacing a product of
 many physical constants by one single new constant, in the same way,
-the electorate in Definition \ref{MainDefinition} serves as an elegant master-parameter
+the ultrafilter in Definition \ref{MainDefinition} serves as an elegant master-parameter
 which hides within it many complicated choices and parameters, including those
-related to future discounting. For example, an electorate might be chosen which
+related to future discounting. For example, an ultrafilter might be chosen which
 gives preference to environments whose rewards taper off exponentially.
 As a general principle, any time a thing must unavoidably depend on arbitrary
 choices, the philosopher should define that thing with those choices parametrized away,
