@@ -56,9 +56,8 @@ point of view.}
 (formalized
 below).
 We will refer to such an agent as a \emph{deterministic Legg-Hutter agent},
-or \emph{DLHA} for short, to distinguish it from various other agents
-in the AGI literature.
-DLHAs' intelligence can be measured in
+or \emph{DLHA} for short, to distinguish it from various other agent notions.
+DLHAs' intelligence can be defined in
 various ways using real numbers (for example, by
 means of infinite series involving Kolmogorov complexities).
 The underlying principle is that a DLHA with higher intelligence should
@@ -92,7 +91,7 @@ of intelligence. Later in this paper, we will explore this property for
 two specific notions of DLHA teamwork.
 
 In the future, we hope that the investigation of structural properties of an
-algebraic nature will help to reveal more qualitative facts about intelligence.
+algebraic nature will help to reveal qualitative facts about intelligence.
 As a precedent, one of the structural properties we prove (Proposition
 \ref{trivialquitterproposition}) helped us realize that if environments can
 give negative rewards, then the relative intelligence of different DLHAs
@@ -159,7 +158,7 @@ The paper is structured as follows:
     \item
     In Section \ref{maindefinitionsection} we define a family of intelligence
     comparators---functions that compare intelligence of
-    deterministic Legg-Hutter agents---in terms of ultrafilters, and
+    DLHAs---in terms of ultrafilters, and
     establish some basic lemmas about these comparators.
     \item
     In Section \ref{structuralpropertiessection}, we prove some structural
@@ -171,13 +170,14 @@ The paper is structured as follows:
     In Section \ref{openquestionsection}, we state some open questions about
     intelligence measures defined by other authors.
     \item
-    In Section \ref{conclusionsection} we summarize and make concluding remarks.
+    In Section \ref{conclusionsection}, we summarize and make concluding remarks.
 \end{itemize}
 
 \section{Preliminaries}
 \label{preliminariessection}
 
-We will begin with a formal definition of deterministic Legg-Hutter agent and of
+We will begin with a formal definition of deterministic Legg-Hutter agent
+(DLHA) and of
 deterministic environment.
 We envision an agent being placed in an environment, where the agent
 receives an initial numerical reward, receives an initial observation, takes an initial
@@ -201,7 +201,8 @@ to which one would want to put a general-purpose AI.
 an environment which incentivizes that; if we want the general-purpose AI to analyze
 protein-folding, we can concoct an environment which incentivizes that; and so on.)
 In order to achieve good rewards across the universe of all environments,
-such an AI would need to have creativity (for those environments that reward creativity),
+such an AI would need to have (or appear to have) creativity (for those
+environments that reward creativity),
 pattern-matching skills (for those environments that reward pattern-matching),
 ability to adapt and learn on-the-fly (for those environments which do not explicitly
 advertise what things they reward, or whose goals change over time), etc.
@@ -258,9 +259,9 @@ a deterministic pre-environment whose reward sequences (for every arbitrary DLHA
         $r_1,o_1,\ldots,r_n,o_n$ of reward-observation pairs, and outputs an action
         $A(r_1,o_1,\ldots,r_n,o_n)$.
         \item
-        If $A$ is a DLHA and $e$ is a deterministic pre-environment,
-        the \emph{reward-observation-action sequence
-        determined by letting $A$ play in $e$} is the infinite sequence
+        Suppose $A$ is a DLHA and $e$ is a deterministic pre-environment.
+        We define the \emph{reward-observation-action sequence
+        determined by letting $A$ play in $e$} to be the infinite sequence
         $r_1,o_1,a_1,r_2,o_2,a_2,\ldots$ defined inductively as follows:
         \begin{itemize}
             \item
@@ -343,8 +344,8 @@ measure of intelligence.
     (Inadequacy of any single deterministic environment)
     Let $e$ be any deterministic environment.
     For every DLHA $A$, there exists some DLHA $B$ such that $A$ and $B$ achieve
-    the same total reward when they play in $e$, and yet $B$'s output does not
-    depend on which rewards or observations are input into it---loosely speaking,
+    the same total reward when they play in $e$, and yet $B$'s output never
+    depends on which rewards or observations are input into it---loosely speaking,
     $B$ ignores everything.
 \end{lemma}
 
