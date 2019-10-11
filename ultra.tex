@@ -738,36 +738,36 @@ avoided that danger.
     allows one to choose which deterministic environments to consider.
     By considering specialized environments, one could obtain
     comparisons of specialized intelligence. For example,
-    suppose $P_1,P_2,\ldots$ is a list of
+    suppose $P_0,P_1,\ldots$ is a list of
     chess-playing computer programs. For each $i$, let $e_{2i}$
     (resp.\ $e_{2i+1}$)
     be the environment: ``play the white (resp.\ black) pieces
     in a game of chess against $P_i$, receiving $+1$ reward
-    on the move (if any) when you win, $-1$ reward
+    on the move (if any) in which you win, $-1$ reward
     on the move (if any) in which you lose, and $0$
     reward on all other moves''. (We can extend chess into an
     infinite game by obliging the players to play
     dummy moves forever after usual gameplay ends.)
     For each ultrafilter, Definition \ref{MainDefinition} yields
-    an abstract method of comparing performance at the game of
+    an abstract comparison of performance at the game of
     chess.
 
     A couple nuances about this paper will be illuminated by contrasting
-    the above-mentioned comparison method with practical chess
+    the above-mentioned comparison with practical chess
     rating systems such as Elo ratings. Rating systems such as Elo
     cast chess-players as agents who can improve (or get worse)
-    from game to game. By contrast, the agents of
+    from game to game. By contrast, the DLHAs of
     Definition \ref{EnvironmentAndAgent} are fixed, and do not
     change from one environment to the next\footnote{This is reminiscent of
-    an observation made in \citet{good}: that in an ideal chess-rating system,
+    an observation of \citet{good}: in an ideal chess-rating system,
     assuming players were accurately rated, then the expected change to the ratings
     after any particular chess-gameplay ought to be $0$.}. This illustrates that
     Definition \ref{MainDefinition} is not really appropriate for
     the intelligence of human beings; it is more appropriate
-    for the intelligence of computer programs, and more specifically,
-    for computer programs just-out-of-the-box.
+    for the intelligence of a general-purpose utility-maximizing AI intended
+    to be used in many different well-defined, rational, emotionless tasks.
 
-    The reason we care about Definition \ref{MainDefinition} is
+    A primary reason we care about Definition \ref{MainDefinition} is
     because it is simple enough to allow the possibility of
     discovering nontrivial, non-contrived structural properties.
     Something like Elo rating is infinitely more practical, but
@@ -811,7 +811,7 @@ $(r_1,o_1,\ldots,r_n,o_n)$,
 \]
 \end{definition}
 
-One can think of $A\oplus B$ as an agent who plans to act as $A$ or $B$,
+One can think of $A\oplus B$ as a DLHA who plans to act as $A$ or $B$,
 but has not yet decided which one. This DLHA will wait until seeing the first
 observation in the environment before committing to act as $A$ or committing
 to act as $B$. In an intuitive sense, $A\oplus B$ is a type of ``team'' formed
@@ -886,7 +886,7 @@ The following definition generalizes Definition \ref{flexiblespecialcase}.
     \]
 \end{definition}
 
-In other words, $A\oplus_X B$ is the agent which has decided either to act as $A$,
+In other words, $A\oplus_X B$ is the DLHA which has decided either to act as $A$,
 or to act as $B$, but refuses to commit to one or the other until it is forced to.
 In any particular deterministic environment, as long as the observations and
 rewards are such that
@@ -1171,7 +1171,8 @@ Whether or not a DLHA is capable of creativity and so on is beyond the scope of
 this paper, but it seems clear that it is possible to design deterministic
 environments with the intention of rewarding creativity, or of rewarding pattern
 recognition, or of rewarding other specific components of intelligence. In order
-to extract good rewards from such environments, a DLHA would either need to possess
+to consistently extract good rewards from such environments, a DLHA would
+either need to possess
 those components of intelligence, or at least appear to possess them for
 practical intents and purposes. To quote Socrates:
 ``But, not possessing right judgment, you would not realize that you are
@@ -1188,14 +1189,14 @@ This is a matter of summarizing the argument from Section \ref{maindefinitionsec
 \begin{itemize}
     \item
     We would like to use the relative performance of DLHAs in deterministic environments
-    in order to determine which DLHAs are more intelligent. More intelligent DLHAs should
-    win higher rewards, not in every deterministic environment (for every DLHA
-    performs badly somewhere), but in some aggregate sense across a whole universe of
+    to determine which DLHAs are more intelligent. More intelligent DLHAs should
+    win higher rewards, not in every deterministic environment, but in some aggregate
+    sense across a whole universe of
     deterministic environments. This idea sounds great, but
-    it is unclear how to actually realize it.
+    it is unclear how to realize it.
     \item
     We view the problem from a different angle: rather
-    than saying that a DLHA with higher intelligence achieves higher rewards
+    than saying a DLHA with higher intelligence achieves higher rewards
     on average from deterministic environments, instead say that deterministic
     environments \emph{elect} more intelligent machines. For, what else can it
     possibly be when a winner is chosen by the aggregated judgments of many
@@ -1233,7 +1234,8 @@ This is a matter of summarizing the argument from Section \ref{maindefinitionsec
 
 The intelligence measure defined by Legg and Hutter is important because it showed
 that it is in principle possible to formalize an abstract measurement of intelligence.
-There are some problems with the specific measure which Legg and Hutter proposed.
+And it is more computationally tractable than our comparators.
+But there are problems with the specific measure which Legg and Hutter proposed.
 \begin{enumerate}
 \item
 Legg and Hutter's measure depends on a
@@ -1241,7 +1243,7 @@ reference universal Turing machine \citep{leike2015bad}.
 \item
 Legg and Hutter's measure depends on the infinite sequence which they use to ensure
 convergence. The contribution from an environment with Kolmogorov complexity
-$K$ is weighed by $2^{-K}$, but why not $3^{-K}$ or $1.1^{-K}$?
+$K$ is weighed by $2^{-K}$, but why not $3^{-K}$ or $1.0001^{-K}$?
 \item
 Legg and Hutter's measure is biased toward agents who perform well in simple environments.
 For example, almost all environments have Kolmogorov complexity $>100$,
@@ -1253,7 +1255,12 @@ We are skeptical that any nontrivial, non-contrived
 Any such property would either have to fundamentally hinge on the specific
 choices that went into their definition (which we think unlikely),
 or else be so general as to work in spite of those specific choices
-(any such property would surely be weak).
+(any such property would surely be weak). Our
+Section \ref{structuralpropertiessection} refers to and depends on the
+specific nature of the agent-environment model (Definition \ref{EnvironmentAndAgent}),
+whereas everything done by prior authors (as far as we know) would work
+if the agent-environment model were replaced by \emph{any} arbitrary bounded function
+assigning real numbers (called \emph{total rewards}) to agent-environment pairs.
 
 \subsection{What about emotions, emotional intelligence, irrational intelligence, etc?}
 
