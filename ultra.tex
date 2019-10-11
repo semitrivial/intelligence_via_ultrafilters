@@ -46,17 +46,20 @@ comparators of deterministic Legg-Hutter agents}
 
 \section{Introduction}
 
-Starting with the landmark paper of \citet{hutter2007}, various
-attempts \citep{hernandez, hibbard, legg2013approximation} have been
-made to quantify the intelligence of an idealized intelligent agent, one which interacts
-with an arbitrary environment based on observations and
-rewards from that environment\footnote{Essentially, the agents and environments
+Who is more intelligent, $A$ or $B$? This is a paper about
+how to formalize a definition of the relative intelligence of
+agents who interact deterministically with deterministic
+environments based on observations and
+rewards\footnote{Essentially, the agents and environments
 of \emph{general reinforcement learning}, but with a more universal
 point of view.}
-(formalized
-below).
+(formalized below).
+Starting with the landmark paper of \citet{hutter2007}, various
+attempts \citep{hernandez, hibbard, legg2013approximation} have been
+made to formalize intelligence measures of such
+agents\footnote{Authors differ on whether or not to require determinism}.
 We will refer to such an agent as a \emph{deterministic Legg-Hutter agent},
-or \emph{DLHA} for short, to distinguish it from various other agent notions.
+or \emph{DLHA} for short, to distinguish it from other agent notions.
 DLHAs' intelligence can be defined in
 various ways using real numbers (for example, by
 means of infinite series involving Kolmogorov complexities).
@@ -66,12 +69,11 @@ Thus, we are talking about a type of intelligence one would consider if
 one were evaluating a general-purpose utility-maximizing AI for usage
 in many well-defined, rational, emotionless tasks.
 
-
 Aside from quantifying and comparing the intelligence of individual DLHAs, this field
 of research has the potential to shed light on (at least certain aspects of)
 intelligence itself,
 abstracted over many DLHAs.
-To that end, we intend to present a notion of the comparative
+To that end, we intend to present a notion of the relative
 intelligence of DLHAs, which notion exhibits
 \emph{structural properties}. What we mean by
 a ``structural property'' is roughly the following: if one knows something about the
@@ -98,29 +100,12 @@ give negative rewards, then the relative intelligence of different DLHAs
 really ought to depend on how risk-averse we are; more on this below.
 
 Rather than directly compute a real number intelligence measure for any
-particular DLHA, we will instead focus on the simpler problem of
+particular DLHA, we instead focus on the simpler problem of
 how to determine whether one DLHA is more intelligent
 than another\footnote{In more practical, less universal contexts, much work has
 been done on comparing agents, see \cite{balduzzi} (section 1) for a collection
 of references. Many practical methods for comparing agents turn out to be non-transitive,
 but the abstract method we introduce is transitive (Lemma \ref{transitivityLemma}).}.
-% A solution to this easier problem could be made to yield a real number intelligence
-% measure by embedding agents onto the real number line according to their
-% relative intelligence (at least assuming relative intelligence is transitive, i.e.,
-% whenever $A$ is more intelligent than $B$ and $B$ is more intelligent than $C$, then
-% $A$ is more intelligent than $C$).
-% The reader might object that the numbers thus obtained would convey
-% no new information beyond the ordering itself.
-% In response, we opine that existing
-% real-valued measurements of universal intelligence don't
-% (at least so far) convey any additional
-% information either, beyond binary
-% comparison of agents. In other words, if one of
-% the measures based on Kolmogorov complexity
-% infinite series says that agent $A$ is $+100$ more
-% intelligent than agent $B$, that does not really
-% tell us anything (at least so far) more than just that $A$ is more intelligent than $B$.
-
 
 We will introduce an abstract intelligence comparison
 based on the following insight:
@@ -128,12 +113,12 @@ when considering whether DLHA $A$ is more intelligent than DLHA $B$,
 we can imagine that different environments are \emph{voters} voting in an election with
 three candidates\footnote{We are not the first to apply election theory to unexpected
 areas by reinterpreting the voters and candidates. For non-AI uses of this technique,
-refer to \citep{okasha, stegenga}.}. Those three
+see \citep{okasha, stegenga}.}. Those three
 candidates are: ``$A$ is more intelligent'',
 ``$B$ is more intelligent'', and ``$A$ and $B$ are equally intelligent''.
 Arrow's impossibility theorem \citep{encyclopedia} would crush all hope of
 easily\footnote{Technically speaking, the way environments vote in different elections
-is constrained, with complicated relationships between different agents binding how
+is constrained, with complicated relationships binding how
 environments vote in different such elections. Thus, it is still possible that
 other solutions to the voting problem might exist, since Arrow's impossibility theorem
 assumes that
@@ -153,8 +138,7 @@ which \emph{does} admit non-dictatorial solutions in terms of ultrafilters.
 The paper is structured as follows:
 \begin{itemize}
     \item Section \ref{preliminariessection} contains preliminaries:
-    a formalization of Legg-Hutter-style agent and
-    environment, and a definition of ultrafilters.
+    a formalization of the agent-environment model, and a definition of ultrafilters.
     \item
     In Section \ref{maindefinitionsection} we define a family of intelligence
     comparators---functions that compare intelligence of
