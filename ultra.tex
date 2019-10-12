@@ -614,7 +614,7 @@ outperform each other on environments, regardless of what exactly that actually 
 However, the precise structure of DLHAs and deterministic environments becomes
 important when one
 wants to actually obtain nontrivial \emph{structural properties} about the resulting
-comparators.
+comparators (Section \ref{structuralpropertiessection}).
 
 \begin{lemma}
 \label{firsteasylemma}
@@ -737,8 +737,8 @@ avoided that danger.
     chess.
 
     A couple nuances about this paper will be illuminated by contrasting
-    the above-mentioned comparison with practical chess
-    rating systems such as Elo ratings. Rating systems such as Elo
+    the above-mentioned comparison with practical chess-rating systems
+    such as Elo ratings. Rating systems such as Elo
     cast chess-players as agents who can improve (or get worse)
     from game to game. By contrast, the DLHAs of
     Definition \ref{EnvironmentAndAgent} are fixed, and do not
@@ -752,12 +752,12 @@ avoided that danger.
     to be used in many different well-defined, rational, emotionless tasks.
 
     A primary reason we care about Definition \ref{MainDefinition} is
-    because it is simple enough to allow the possibility of
-    discovering nontrivial, non-contrived structural properties.
+    because it is simple enough to allow the discovery
+    of nontrivial, non-contrived structural properties.
     Something like Elo rating is infinitely more practical, but
     we doubt that it is possible to prove any nontrivial,
     non-contrived structural properties about performance as
-    reflected through Elo ratings. Indeed, it is partly because
+    measured by Elo. Indeed, it is partly because
     our abstract definition treats agents as fixed and unchanging and deterministic
     that structural properties become obtainable. A chess-player's
     Elo rating at any given time depends not only on the outcomes
@@ -881,8 +881,9 @@ to follow in that environment, and it makes that decision based on whether or no
 $X$ contains the observation-reward sequence which caused $A$ and $B$ to disagree.
 Again, $A\oplus_X B$ is intuitively a type of ``team'' formed by $A$ and $B$.
 
-The reader can easily check that if $X$ is the set of reward-observation sequences whose first
-observation is even, then $\oplus_X$, as given by Definition \ref{flexiblecombo},
+The reader can easily check that if $X$ is the set of reward-observation sequences
+with first
+observation even, then $\oplus_X$, as given by Definition \ref{flexiblecombo},
 is the same as $\oplus$ from Definition \ref{flexiblespecialcase}.
 
 \begin{proposition}
@@ -1301,11 +1302,12 @@ machines, almost universally accepted as a model of computation, are
 equipped with infinite memory-tapes and allowed to run for eternity. And
 computability theorists routinely consider the entire infinite space of hypothetical
 Turing machines, even though a finite, discrete universe can only
-instantiate finitely many of them. Similarly, complexity theorists study
-the big-$O$ runtime complexity of algorithms, despite the fact that real-world
-computers have finite memories and therefore in a sense, every algorithm implemented
-on any real-world computer actually has runtime complexity $O(1)$. In these areas,
-infinity serves as an important simplifying assumption. Without such simplifying
+instantiate finitely many of them.
+% Similarly, complexity theorists study
+% the big-$O$ runtime complexity of algorithms, despite the fact that real-world
+% computers have finite memories and therefore in a sense, every algorithm implemented
+% on any real-world computer actually has runtime complexity $O(1)$.
+Infinity serves as an important simplifying assumption. Without such simplifying
 assumptions, computer science would be filled with arbitrary decisions about
 how many bits of memory the idealized computer actually has, how long
 algorithms can run before the heat-death of the universe, etc. Considering
